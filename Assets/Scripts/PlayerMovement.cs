@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
         var move = objTransform.right * x + objTransform.forward * z;
 
         var moveSpeed = move * speed;
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            moveSpeed *= 2;
         controller.Move(moveSpeed * Time.deltaTime);
     }
 }
